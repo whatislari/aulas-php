@@ -16,12 +16,11 @@
                 </div>
                 <hr>
                 <div class="col-sm-4">
-                    <p><input type="text" placeholder="Notinha 1" name="txtN1" id="txtN1" class="form-control notas"></p>
-                    <p><input type="text" placeholder="Notinha 2" name="txtN2" id="txtN2" class="form-control notas"></p>
-                    <p><input type="text" placeholder="Notinha 3" name="txtN3" id="txtN3" class="form-control notas"></p>
-                    <p><input type="text" placeholder="Notinha 4" name="txtN4" id="txtN4" class="form-control notas"></p>
+                    <p><input type="number" placeholder="Notinha 1" name="txtN1" id="txtN1" class="form-control notas"min=0 max=10></p>
+                    <p><input type="number" placeholder="Notinha 2" name="txtN2" id="txtN2" class="form-control notas"min=0 max=10></p>
+                    <p><input type="number" placeholder="Notinha 3" name="txtN3" id="txtN3" class="form-control notas"min=0 max=10></p>
+                    <p><input type="number" placeholder="Notinha 4" name="txtN4" id="txtN4" class="form-control notas"min=0 max=10></p>
                     <p><button id="btoCalcular" name="btoCalcular" class="btn btn-primary form-control" formaction="atvimedia.php">Calcular</button></p>
-                    <hr>
                     <hr>
                     <?php
                     include_once('opmedia.php');
