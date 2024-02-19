@@ -40,10 +40,14 @@
                     <option value="bo">Boleto</option>
                   </select>
             </div>
-        </div>
-        <hr>
-        <div class="col-sm-12 text-center">
-            <h4>Informações da compra</h4>
+            </div>
+            <hr>
+            <div class="col-sm-12 text-center">
+                <h4>Informações da compra</h4>
+            </div>
+            <div class="col-sm-6 mx-auto">
+                <p><button id="btoCalcular" name="btoCalcular" class="btn btn-primary form-control" formaction="sismerc.php"></button></p>
+            </div>
         </div>
     </form>
 </div>
