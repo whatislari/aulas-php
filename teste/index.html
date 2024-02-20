@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela de Investimento</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="mt-5 mb-4">Tabela de Investimento</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form>
+        <div class="mb-3">
+          <label for="valorInicial" class="form-label">Valor Inicial:</label>
+          <input type="number" class="form-control" id="valorInicial" placeholder="Valor inicial">
+        </div>
+        <div class="mb-3">
+          <label for="valorMensal" class="form-label">Valor Aplicado Mensalmente:</label>
+          <input type="number" class="form-control" id="valorMensal" placeholder="Valor aplicado mensalmente">
+        </div>
+        <div class="mb-3">
+          <label for="jurosAnual" class="form-label">Juros Anual:</label>
+          <input type="number" class="form-control" id="jurosAnual" placeholder="Juros anual">
+        </div>
+        <div class="mb-3">
+          <label for="tempoAnos" class="form-label">Tempo em Anos:</label>
+          <input type="number" class="form-control" id="tempoAnos" placeholder="Tempo em anos">
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular</button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col">
+      <div class="tabela-customizada"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
