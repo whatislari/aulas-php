@@ -1,7 +1,7 @@
 <?php   
 
     include_once('conn.php');
-
+    
     try 
     {
         $sql = $conn-> query('SELECT * FROM usuario');
