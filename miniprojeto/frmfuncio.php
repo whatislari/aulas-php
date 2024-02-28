@@ -9,6 +9,13 @@
     <script src="js/bootstrap.js"></script>
 </head>
 <body>
+    <?php 
+        $mensagem="";
+        include_once('funcio_pesq.php');
+        include_once('funcio_alte.php');
+        include_once('funcio_cadas.php');
+        include_once('funcio_exclu.php');
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
@@ -31,7 +38,7 @@
                             &nbsp;
                         </p>
                         <p>
-                        <button class="btn btn-primary form-control w-25" name="btopesquisar" formaction="">&#128269;</button>
+                        <button class="btn btn-primary form-control w-25" name="btopesquisar" formaction="frmfuncio.php">&#128269;</button>
                         </p>
                     </div>
                     <div class="col-sm-3"></div>
@@ -47,51 +54,51 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <p>
-                            <input type="text" name="txtnome" placeholder="Informe o nome completo" id="txtnome" class="form-control">
+                            <input type="text" name="txtnome" placeholder="Informe o nome completo" id="txtnome" class="form-control" value="<?=$nome?>">
                         </p>
                     </div>
                     <div class="col-sm-4">
                         <p>
-                            <input type="text" name="txtcpf" placeholder="Informe CPF" id="txtcpf" class="form-control">
+                            <input type="text" name="txtcpf" placeholder="Informe CPF" id="txtcpf" class="form-control"value="<?=$cpf?>">
                         </p>
                     </div>
                     <div class="col-sm-4">
                         <p>
-                            <input type="date" class="form-control"value="<?=$data?>">
+                            <input type="date" name="txtnasc" class="form-control"value="<?=$data?>">
                         </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-5">
                         <p>
-                            <input type="text" name="txtende" placeholder="Informe o Endereço" id="txtende" class="form-control">
+                            <input type="text" name="txtende" placeholder="Informe o Endereço" id="txtende" class="form-control"value="<?=$ende?>">
                         </p>
                     </div>
                     <div class="col-sm-2">
                         <p>
-                            <input type="text" name="txtnum" placeholder="Nº" id="txtnum" class="form-control">
+                            <input type="text" name="txtnum" placeholder="Nº" id="txtnum" class="form-control"value="<?=$num?>">
                         </p>
                     </div>
                     <div class="col-sm-5">
                         <p>
-                            <input type="text" name="txtcomp" placeholder="Complemento" id="txtcomp" class="form-control">
+                            <input type="text" name="txtcomp" placeholder="Complemento" id="txtcomp" class="form-control"value="<?=$comp?>">
                         </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-3">
                         <p>
-                            <input type="text" name="txtcep" placeholder="CEP" id="txtcep" class="form-control">
+                            <input type="text" name="txtcep" placeholder="CEP" id="txtcep" class="form-control"value="<?=$cep?>">
                         </p>
                     </div>
                     <div class="col-sm-3">
                         <p>
-                            <input type="text" name="txtbairro" placeholder="Bairro" id="txtbairro" class="form-control">
+                            <input type="text" name="txtbairro" placeholder="Bairro" id="txtbairro" class="form-control"value="<?=$bairro?>">
                         </p>
                     </div>
                     <div class="col-sm-3">
                         <p>
-                            <input type="text" name="txtcidade" placeholder="Cidade" id="txtcidade" class="form-control">
+                            <input type="text" name="txtcidade" placeholder="Cidade" id="txtcidade" class="form-control"value="<?=$cidade?>">
                         </p>
                     </div>
                     <div class="col-sm-3">
@@ -130,26 +137,26 @@
                     </div>
                     <div class="col-sm-4">
                         <p>
-                            <input type="text" name="txttel1" placeholder="Telefone 1" id="txttel1" class="form-control">
+                            <input type="text" name="txttel1" placeholder="Telefone 1" id="txttel1" class="form-control"value="<?=$tel1?>">
                         </p>
                     </div>
                     <div class="col-sm-4">
                         <p>
-                            <input type="text" name="txttel1" placeholder="Telefone 2" id="txttel1" class="form-control">
+                            <input type="text" name="txttel2" placeholder="Telefone 2" id="txttel2" class="form-control"value="<?=$tel2?>">
                         </p>
                     </div>
                     <div class="col-sm-4">
                         <select name="txtstatus" id="txtstatus" class="form-select">
                             <option value=""> -- Status -- </option>
-                            <option value="ATIVO">ATIVO</option>
-                            <option value="INATIVO">INATIVO</option>
+                            <option value="Ativo" <?=($status == 'Ativo')?'selected':''; ?>>Ativo</option>
+                            <option value="Inativo" <?=($status == 'Inativo')?'selected':''; ?>>Inativo</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <p>
-                            <textarea name="txtobs" placeholder="Observação" id="txtobs" rows="5" class="form-control"></textarea>
+                            <textarea name="txtobs" placeholder="Observação" id="txtobs" rows="5" class="form-control"><?=$obs?></textarea>
                         </p>
                     </div>
                 </div> <div class="row">
