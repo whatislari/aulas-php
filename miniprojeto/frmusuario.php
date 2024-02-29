@@ -19,8 +19,8 @@
         ?>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 text-center">
-                <hr>
+            <div class="col-sm-12 text-center p-5">
+                
                 <h1>Formulário de usuarios</h1>
                 <hr>
             </div>
