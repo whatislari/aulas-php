@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movimentação</title>
+    <title>Local estoque</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilo.css">
     <script src="js/bootstrap.js"></script>
 
 </head>
 <body>
+    <?php
+        include_once("locest_pesq.php");
+        include_once("locest_cadas.php");
+        include_once("locest_alte.php");
+        include_once("locest_exclu.php");        
+    ?>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 text-center p-5">
@@ -68,7 +74,7 @@
             <div class="row">
                  <div class="col-sm-12">
                     <p>
-                        <textarea name="txtobs" id="txtobs" rows="5" class="form-control" placeholder= "Observação"></textarea>
+                        <textarea name="txtobs" id="txtobs" rows="5" class="form-control" placeholder= "Observação"><?=$obs?></textarea>
                     </p>
                 </div>
             </div>
@@ -76,7 +82,7 @@
                 <div class="col-sm-12 text-end">
                     <button class="btn btn-success" formaction="frmlocest.php" name="btocadastrar"> Cadastrar</button>
                     <button class="btn btn-info" formaction="frmlocest.php" name="btoalterar">Alterar</button>
-                    <a class=" btn btn-primary" href="frmpro.php">Limpar</a>
+                    <a class=" btn btn-primary" href="frmlocest.php">Limpar</a>
                     <button class="btn btn-danger" formaction="frmlocest.php" name="btoexcluir">Excluir</button>
                 </div>
             </div>

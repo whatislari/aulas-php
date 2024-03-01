@@ -23,30 +23,31 @@
             </div>
             <form action="" method="post" class="form-control bg-secondary">
                 <div class="row">
-                <div class="col-sm-3">
-                        <p>
-                            &nbsp;
-                        </p>
-                        <p>
-                            <input type="number" name="txtid" placeholder="Id" id="txtid" class="form-control" value="<?= $id ?>">
-                        </p>
-                    </div>
                     <div class="col-sm-3">
-                        <p>
-                            &nbsp;
-                        </p>
-                        <p>
-                            <button class="btn btn-primary form-control w-25" name="btoPesquisar" formaction="frmpro.php">&#128269;</button>
-                        </p>
-                    </div>
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-3">  
-                        <p>
-                            &nbsp;
-                        </p>             
-                        <p>
-                            <input type="date" class="form-control"value="<?= $data ?>">
-                        </p>
+                            <p>
+                                &nbsp;
+                            </p>
+                            <p>
+                                <input type="number" name="txtid" placeholder="Id" id="txtid" class="form-control" value="<?= $id ?>">
+                            </p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>
+                                &nbsp;
+                            </p>
+                            <p>
+                                <button class="btn btn-primary form-control w-25" name="btoPesquisar" formaction="frmpro.php">&#128269;</button>
+                            </p>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3">  
+                            <p>
+                                &nbsp;
+                            </p>             
+                            <p>
+                                <input type="date" class="form-control"value="<?= $data ?>">
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
