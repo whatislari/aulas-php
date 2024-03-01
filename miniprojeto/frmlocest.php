@@ -31,7 +31,7 @@
                             &nbsp;
                         </p>
                         <p>
-                            <button class="btn btn-primary form-control w-25" name="btoPesquisar" formaction="frmpro.php">&#128269;</button>
+                            <button class="btn btn-primary form-control w-25" name="btoPesquisar" formaction="frmlocest.php">&#128269;</button>
                         </p>
                     </div>
                     <div class="col-sm-3"></div>
@@ -44,17 +44,42 @@
                         </p>
                     </div>
             </div>
-        </div>  
-        <div class="row">
-            <div class="col-sm-6">
-                <p>
-                    <input type="text" name="txtnome" id= "txtnome" class="form-control w-30"placeholder="Insira aqui o produto">
-                </p>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>
+                        <input type="text" name="txtnome" id= "txtnome" class="form-control w-30"placeholder="Insira aqui o produto">
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <p>
+                        &nbsp;
+                    </p> 
+                </div>
+                <div class="col-sm-4">
+                    <p>
+                        <select name="txtstatus" id="txtstatus" class="form-select">
+                            <option value=""> --- Definir status --- </option>
+                            <option value= "ATIVO" <?=($status=='ATIVO')?'Selected':'';?>>Ativo</option>
+                            <option value="INATIVO" <?=($status=='INATIVO')?'Selected':'';?>>Inativo</option>
+                        </select>
+                    </p>
+                </div>
+            </div> 
+            <div class="row">
+                 <div class="col-sm-12">
+                    <p>
+                        <textarea name="txtobs" id="txtobs" rows="5" class="form-control" placeholder= "Observação"></textarea>
+                    </p>
+                </div>
             </div>
-        </div>      
+            <div class="row">
+                <div class="col-sm-12 text-end">
+                    <button class="btn btn-success" formaction="frmlocest.php" name="btocadastrar"> Cadastrar</button>
+                    <button class="btn btn-info" formaction="frmlocest.php" name="btoalterar">Alterar</button>
+                    <a class=" btn btn-primary" href="frmpro.php">Limpar</a>
+                    <button class="btn btn-danger" formaction="frmlocest.php" name="btoexcluir">Excluir</button>
+                </div>
+            </div>
+        </div>
     </form>
-</div>    
-
-
-</body>
-</html>
+</div>
