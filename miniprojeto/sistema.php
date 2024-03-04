@@ -21,9 +21,6 @@
     </div>
     <div class="container mb-3">
         <div class="row">
-            <div class="col-sm-2">
-                <?php include_once("_menu.php"); ?>
-            </div>
             <div class="col-sm-10">
                 <?php
                 if(isset($_GET['tela']))
