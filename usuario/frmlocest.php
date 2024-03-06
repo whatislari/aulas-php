@@ -6,7 +6,6 @@
     <title>Local estoque</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilo.css">
-    <script src="js/bootstrap.js"></script>
 
 </head>
 <body>
@@ -88,4 +87,9 @@
             </div>
         </div>
     </form>
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+        
+    </script>
 </div>

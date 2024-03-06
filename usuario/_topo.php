@@ -37,8 +37,8 @@
       <p>ID: <?=$idUsuarioSessao?><br>
       Nome: <?=$nomeUsuarioSessao?><br>
       Login: <?=$loginUsuarioSessao?><br></p>
-      <a href="_logoff.php" class="btn btn-danger">Sair</a>
-  </div>
+    <a href="_logoff.php" class="btn btn-danger">Sair</a>
+
   </div>
 
 </nav>

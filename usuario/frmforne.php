@@ -31,7 +31,7 @@
                             &nbsp;
                         </p>
                         <p>
-                        <button class="btn btn-primary form-control w-25" name="btopesquisar" formaction="frmfuncio.php">&#128269;</button>
+                        <button class="btn btn-primary form-control w-25" name="btopesquisar" formaction="frmforne.php">&#128269;</button>
                         </p>
                     </div>
                     <div class="col-sm-3"></div>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="col-sm-4">
                         <p>
-                            <input type="text" name="txtcpf" placeholder="Informe CPF" id="txtcpf" class="form-control">
+                            <input type="text" name="txtcpf" placeholder="Informe CNPJ/CPF" id="txtcpf" class="form-control">
                         </p>
                     </div>
                     <div class="col-sm-4">
@@ -154,10 +154,10 @@
                     </div>
                 </div> <div class="row">
                     <div class="col-sm-12 text-end">
-                        <button class="btn btn-success" formaction="frmfuncio.php" name="btocadastrar"> Cadastrar</button>
-                        <button class="btn btn-info" formaction="frmfuncio.php" name="btoalterar">Alterar</button>
-                        <a class=" btn btn-primary" href="frmfuncio.php" >Limpar</a>
-                        <button class="btn btn-danger" formaction="frmfuncio.php" name="btoexcluir">Excluir</button>
+                        <button class="btn btn-success" formaction="frmforne.php" name="btocadastrar"> Cadastrar</button>
+                        <button class="btn btn-info" formaction="frmforne.php" name="btoalterar">Alterar</button>
+                        <a class=" btn btn-primary" href="frmforne.php" >Limpar</a>
+                        <button class="btn btn-danger" formaction="frmforne.php" name="btoexcluir">Excluir</button>
                     </div>
                 </div>
             </form>

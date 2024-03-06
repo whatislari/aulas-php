@@ -31,7 +31,7 @@
                     {
                         include_once("frmusuario.php"); 
                     }
-                    if($tela=='funcionario')
+                    if($tela=='funcio')
                     {
                         include_once("frmfuncio.php"); 
                     }

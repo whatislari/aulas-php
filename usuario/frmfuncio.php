@@ -11,6 +11,7 @@
 <body>
     <?php 
         $mensagem="";
+        
         include_once('funcio_pesq.php');
         include_once('funcio_alte.php');
         include_once('funcio_cadas.php');

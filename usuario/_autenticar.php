@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 session_start();
 
@@ -13,4 +13,4 @@ else
     header('Location:index.php');
 }
 
-?>
+?> 
