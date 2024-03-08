@@ -12,7 +12,6 @@
 <body>
         <?php 
             $mensagem="";
-            $mensagem="";
             $id="";
             $nome="";
             $login="";
@@ -21,6 +20,7 @@
             $obs="";
             $status="";
             $img="";
+            
             include_once('usuario_pesq.php');
             include_once('usuario_cadas.php');
             include_once('usuario_alte.php');
@@ -105,7 +105,7 @@
                     <div class="col-sm-12 text-end">
                         <button class="btn btn-success" formaction="frmusuario.php" name="btocadastrar" onclick="Enviar('Cad')"> Cadastrar</button>
                         <button class="btn btn-info" formaction="frmusuario.php" name="btoalterar" onclick="Enviar('Alt')">Alterar</button>
-                        <a class=" btn btn-primary" href="frmusuario.php" onclick="Limpar();">Limpar</a>
+                        <a href="sistema.php?tela=usuario" class="btn btn-dark">Limpar</a>
                         <button class="btn btn-danger" formaction="frmusuario.php" onclick="Enviar('Exc')" name="btoexcluir">Excluir</button>
                     </div>
                 </div>

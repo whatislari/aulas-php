@@ -1,4 +1,5 @@
 <?php
+
 if($_POST)
 {
 if($_POST['txtacao']=='Cadastrar')

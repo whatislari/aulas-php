@@ -1,14 +1,4 @@
 <?php
-
-    $id="";
-    $nome="";
-    $data= "";
-    $qtde="";
-    $vcusto="";
-    $vvenda="";
-    $obs="";
-    $status="";
-
     if(isset($_POST['btoPesquisar']))
     {
         include_once("conn.php");
@@ -30,6 +20,7 @@
                     $vvenda=$linha[5];
                     $obs=$linha[6];
                     $status=$linha[7];
+                    $img=$linha[8];
 
                 }
             }else{
