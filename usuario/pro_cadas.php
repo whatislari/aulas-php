@@ -11,19 +11,19 @@ if($_POST['txtacao']=='Cadastrar')
     try 
     {
         $sql = $conn->prepare('
-        insert into usuario
-            (nome_usuario,login_usuario,senha_usuario,obs_usuario,img_usuario)
-            values(:nome_usuario,:login_usuario,:senha_usuario,:obs_usuario,:img_usuario)
+        insert into produto
+            (nome_produto,qtde_produto,Vcusto_produto,Vvenda_produto,obs_produto,img_produto)
+            values(:nome_produto,:qtde_produto,:Vcusto_produto,:Vvenda_produto,:obs_produto,:img_produto)
         ');
 
         $sql->execute(array(
-            ':id_usuario'=>$_POST['txtid'],
-            ':nome_usuario'=>$_POST['txtnome'],
-            ':login_usuario'=>$_POST['txtlogin'],
-            ':senha_usuario'=>$_POST['txtsenha'],
-            ':obs_usuario'=>$_POST['txtobs'],
-            ':status_usuario'=>$_POST['txtstatus'],
-            ':img_usuario'=>$arquivo['name']
+            ':nome_produto'=>$_POST['txtnome'],
+            ':qtde_produto'=>$_POST['txtqtde'],
+            ':Vcusto_produto'=>$_POST['txtVcusto'],
+            ':Vvenda_produto'=>$_POST['txtVvenda'],
+            ':obs_produto'=>$_POST['txtobs'],
+            ':status_produto'=>$_POST['txtstatus'],
+            ':img_produto'=>$arquivo['name']
         ));
 
 
@@ -43,7 +43,7 @@ if($_POST['txtacao']=='Cadastrar')
 
             move_uploaded_file($arquivo['tmp_name'],$foto);
 
-            header("Location:sistema.php?tela=usuario&IDUsuario=".$conn->lastInsertId());
+            header("Location:sistema.php?tela=produto&IDUsuario=".$conn->lastInsertId());
         }
     } 
     catch (PDOException $erro) {

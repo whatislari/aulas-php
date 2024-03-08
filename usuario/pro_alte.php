@@ -12,20 +12,23 @@ if($_POST['txtacao']=='Alterar')
         try 
         {
             $sql = $conn->prepare('
-            update usuario set
-                nome_usuario=:nome_usuario,
-                login_usuario=:login_usuario,
-                senha_usuario=:senha_usuario,
-                obs_usuario=:obs_usuario,
-                status_usuario=:status_usuario,
-                img_usuario=:img_usuario
-                where id_usuario=:id_usuario
+            update produto set
+                nome_produto=:nome_produto,
+                qtde_produto=:qtde_produto,
+                Vcusto_produto=:Vcusto_produto,
+                Vvenda_produto=:Vvenda_produto,
+                obs_produto=:obs_produto,
+                img_produto=:img_produto
+                status_produto=:status_produto,
+
+                where id_produto=:id_produto
             ');
             $sql->execute(array(
-                ':id_usuario'=>$_POST['txtid'],
+                ':id_produto'=>$_POST['txtid'],
                 ':nome_usuario'=>$_POST['txtnome'],
-                ':login_usuario'=>$_POST['txtlogin'],
-                ':senha_usuario'=>$_POST['txtsenha'],
+                ':qtde_produto'=>$_POST['txtqtde'],
+                ':Vcusto_produto'=>$_POST['txtVcusto'],
+                ':Vvenda_produto'=>$_POST['txtVvenda'],
                 ':obs_usuario'=>$_POST['txtobs'],
                 ':status_usuario'=>$_POST['txtstatus'],
                 ':img_usuario'=>$arquivo['name']
@@ -55,21 +58,26 @@ if($_POST['txtacao']=='Alterar')
         try 
         {
             $sql = $conn->prepare('
-            update usuario set
-                nome_usuario=:nome_usuario,
-                login_usuario=:login_usuario,
-                senha_usuario=:senha_usuario,
-                obs_usuario=:obs_usuario,
-                status_usuario=:status_usuario
-                where id_usuario=:id_usuario
+            update produto set
+                nome_produto=:nome_produto,
+                qtde_produto=:qtde_produto,
+                Vcusto_produto=:Vcusto_produto,
+                Vvenda_produto=:Vvenda_produto,
+                obs_produto=:obs_produto,
+                img_produto=:img_produto
+                status_produto=:status_produto,
+                
+                where id_produto=:id_produto
             ');
             $sql->execute(array(
-                ':id_usuario'=>$_POST['txtid'],
-                ':nome_usuario'=>$_POST['txtnome'],
-                ':login_usuario'=>$_POST['txtlogin'],
-                ':senha_usuario'=>$_POST['txtsenha'],
-                ':obs_usuario'=>$_POST['txtobs'],
-                ':status_usuario'=>$_POST['txtstatus']
+                ':id_produto'=>$_POST['txtid'],
+                ':nome_produto'=>$_POST['txtnome'],
+                ':qtde_produto'=>$_POST['txtqtde'],
+                ':Vcusto_produto'=>$_POST['txtVcusto'],
+                ':Vvenda_produto'=>$_POST['txtVvenda'],
+                ':obs_produto'=>$_POST['txtobs'],
+                ':status_produto'=>$_POST['txtstatus'],
+                ':img_produto'=>$arquivo['name']
             ));
             if($sql->rowCount() > 0)
             {

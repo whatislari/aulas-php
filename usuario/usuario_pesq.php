@@ -1,5 +1,8 @@
 <?php
-
+if(!isset($_POST['txtacao']))
+{
+    return;
+}
 
 if($_POST or $_GET)
 {

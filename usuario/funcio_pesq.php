@@ -1,41 +1,38 @@
 <?php
-$id = "";
-$nome = "";
-$nasc = "";
-$data = "";
-$cpf = "";
-$ende = "";
-$num = "";
-$comp = "";
-$cep = "";
-$bairro = "";
-$cidade = "";
-$uf = "";
-$tel1 = "";
-$tel2 = "";
-$obs = "";
-$status = "";
 
-if(isset($_POST['btopesquisar']))
+
+if($_POST or $_GET)
 {
+if(isset($_POST['txtacao']) or isset($_GET['IDUsuario']))
+{
+
     include_once('conn.php');
+
+    $idUsuario="";
+    
+    if(isset($_POST['txtacao']))
+    {
+        if($_POST['txtacao']=='Pesquisar')
+        {
+            $idUsuario=$_POST['txtid'];
+        }
+        else
+        {
+            return;
+        }
+    }
+    elseif(isset($_GET['IDUsuario']))
+    {        
+        $idUsuario=$_GET['IDUsuario'];
+    }
 
     try
     {
-        $txtid = $_POST['txtid'];
+        
 
-        // Verificar se o ID é um número válido
-        if(!is_numeric($txtid)) {
-            throw new Exception("ID inválido. O ID deve ser um número.");
-        }
+        $sql = $conn->query('select * from funcionario where id_funcionario='.$idUsuario);
 
-        // Preparar a consulta SQL usando prepared statements para evitar SQL injection
-        $sql = $conn->prepare('SELECT * FROM funcionario WHERE id_funcionario = :id');
-        $sql->bindParam(':id', $txtid);
-        $sql->execute();
-
-        // Verificar se a consulta foi bem sucedida
-        if($sql->rowCount() > 0)
+        if($sql->rowCount()>0)
         {
             foreach($sql as $linha)
             {
@@ -54,17 +51,20 @@ if(isset($_POST['btopesquisar']))
                 $uf = $linha[11];
                 $tel1 = $linha[12];
                 $tel2 = $linha[13];
-                $obs = $linha[14];
-                $status = $linha[15];
+                $img = $linha[14];
+                $obs = $linha[15];
+                $status = $linha[16];
             }
-        } else {
-            // Se o funcionário não for encontrado, exibir uma mensagem
-            echo '<script>alert("Funcionário não encontrado")</script>';
-            $mensagem = "Funcionário não encontrado";
+        }else{
+            echo '<script>alert("Usuário não encontrado")</script>';
+            $mensagem = "Funcionario não encontado";
         }
-    } catch(Exception $e) {
-        // Exibir mensagem de erro
-        echo "Erro: " . $e->getMessage();
+        
+    }
+    catch(PDOException $erro)
+    {
+        echo $erro->getMessage();
     }   
+}
 }
 ?>

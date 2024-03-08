@@ -1,17 +1,16 @@
 <?php
-
-include_once('conn.php');
-
-if(isset($_POST['btocadastrar']))
+if($_POST)
 {
-    try {  
-        if(empty($_POST['txtcpf'])) 
-        {
-            echo "O CPF é obrigatório.";
-        } 
-        else
-        {
-            $sql = $conn->prepare('
+if($_POST['txtacao']=='Cadastrar')
+{
+
+    include_once('conn.php');
+
+    $arquivo = $_FILES['txtimg'];
+
+    try 
+    {
+        $sql = $conn->prepare('
             insert into funcionario
             (nome_funcionario,
             nasc_funcionario,
@@ -25,6 +24,7 @@ if(isset($_POST['btocadastrar']))
             uf_funcionario,
             telefone1_funcionario,
             telefone2_funcionario,
+            img_funcionario,
             obs_funcionario,
             status_funcionario) 
 
@@ -42,10 +42,12 @@ if(isset($_POST['btocadastrar']))
             :uf_funcionario,
             :telefone1_funcionario,
             :telefone2_funcionario,
+            :img_funcionario,
             :obs_funcionario,
             :status_funcionario)
             ');
             
+
             $sql->execute(array(
                 ':nome_funcionario' => $_POST['txtnome'],
                 ':nasc_funcionario' => $_POST['txtnasc'],
@@ -59,20 +61,36 @@ if(isset($_POST['btocadastrar']))
                 ':uf_funcionario' => $_POST['txtuf'],
                 ':telefone1_funcionario' => $_POST['txttel1'],
                 ':telefone2_funcionario' => $_POST['txttel2'],
+                ':img_funcionario' => $_POST['txttimg'],
                 ':obs_funcionario' => $_POST['txtobs'],
                 ':status_funcionario'=> $_POST['txtstatus'],
             ));
 
-            if($sql->rowCount() > 0)
+
+        if($sql->rowCount() > 0)
+        {
+            $mensagem = '<p>Cadastro realizado com sucesso</p> - '.$sql->rowCount();
+            $mensagem = $mensagem.'<p>ID Gerado:'.$conn->lastInsertId().'</p>';
+
+            $pasta = 'imagens/'.$conn->lastInsertId().'/';
+            
+            if(!file_exists($pasta))
             {
-                $mensagem = '<p>Cadastro realizado com sucesso</p> - '.$sql->rowCount();
-                $mensagem = $mensagem.'<p>ID Gerado:'.$conn->lastInsertId().'</p>';
+                mkdir($pasta);
             }
+
+            $foto = $pasta.$arquivo['name'];
+
+            move_uploaded_file($arquivo['tmp_name'],$foto);
+
+            header("Location:sistema.php?tela=funcio&IDUsuario=".$conn->lastInsertId());
         }
     } 
-    catch(PDOException $error) 
-    {
-        echo "". $error->getMessage();
+    catch (PDOException $erro) {
+        echo $erro->getMessage();
     }
 }
+}
+
+ 
 ?>
